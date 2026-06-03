@@ -8,35 +8,30 @@ const services = [
     text: "Dyer alumini dhe PVC per hyrje, ballkone, lokale dhe objekte banimi.",
     accent: "tech",
     icon: "door",
-    features: ["Alumin / PVC", "Izolim", "Montim i paster"],
   },
   {
     title: "Dritare",
     text: "Dritare me izolim termik dhe akustik, te pershtatura sipas matjeve.",
     accent: "tech",
     icon: "window",
-    features: ["Termoizolim", "Akustike", "Profile moderne"],
   },
   {
     title: "Roleta",
     text: "Roleta te jashtme dhe sisteme mbrojtese per hije, siguri dhe rehati.",
     accent: "roll",
     icon: "shutter",
-    features: ["Manuale / elektrike", "Hije", "Siguri"],
   },
   {
     title: "Xhama palues",
     text: "Sisteme xhamash palues per ballkone, terasa dhe ambiente me hapje panoramike.",
     accent: "tech",
     icon: "foldingGlass",
-    features: ["Ballkone", "Terasa", "Pamje panoramike"],
   },
   {
     title: "Fasada ventiluese",
     text: "Fasada ventiluese per objekte moderne, me pamje te paster dhe qarkullim te mire ajri.",
     accent: "roll",
     icon: "facade",
-    features: ["Objekte moderne", "Qarkullim ajri", "Pamje elegante"],
   },
 ];
 
@@ -48,16 +43,56 @@ const highlights = [
 ];
 
 const products = [
-  "Dyer te jashtme",
-  "Dyer te brendshme",
-  "Dritare PVC",
-  "Dritare alumini",
-  "Roleta alumini",
-  "Roleta elektrike",
-  "Xhama palues per ballkon",
-  "Fasada ventiluese",
-  "Rrjeta kunder insekteve",
-  "Aksesore dhe mekanizma",
+  {
+    title: "Dyer te jashtme",
+    text: "Hyrje te sigurta dhe te qendrueshme per shtepi apo lokale.",
+    icon: "door",
+  },
+  {
+    title: "Dyer te brendshme",
+    text: "Zgjidhje praktike me pamje te paster per ambiente te brendshme.",
+    icon: "door",
+  },
+  {
+    title: "Dritare PVC",
+    text: "Izolim i mire termik dhe akustik, sipas matjeve ne objekt.",
+    icon: "window",
+  },
+  {
+    title: "Dritare alumini",
+    text: "Profile moderne per objekte banimi dhe hapësira biznesi.",
+    icon: "window",
+  },
+  {
+    title: "Roleta alumini",
+    text: "Mbrojtje nga dielli, privatese dhe siguri per dritare.",
+    icon: "shutter",
+  },
+  {
+    title: "Roleta elektrike",
+    text: "Komoditet me hapje dhe mbyllje te kontrolluar elektrikisht.",
+    icon: "electricShutter",
+  },
+  {
+    title: "Xhama palues per ballkon",
+    text: "Mbyllje elegante per ballkone dhe terasa me pamje panoramike.",
+    icon: "foldingGlass",
+  },
+  {
+    title: "Fasada ventiluese",
+    text: "Sistem fasade per objekte moderne me qarkullim ajri.",
+    icon: "facade",
+  },
+  {
+    title: "Rrjeta kunder insekteve",
+    text: "Rrjeta te pershtatura per dritare dhe dyer, praktike ne perdorim.",
+    icon: "screen",
+  },
+  {
+    title: "Aksesore dhe mekanizma",
+    text: "Pjese percjellese, mekanizma dhe mirembajtje sipas nevojes.",
+    icon: "mechanism",
+  },
 ];
 
 const projects = [
@@ -139,6 +174,17 @@ function ServiceIcon({ type }) {
         <path d="M14 33h20" />
       </svg>
     ),
+    electricShutter: (
+      <svg aria-hidden="true" {...commonProps}>
+        <path d="M9 10h21v28H9z" />
+        <path d="M13 16h13" />
+        <path d="M13 22h13" />
+        <path d="M13 28h13" />
+        <path d="M35 10v12" />
+        <path d="m31 22 4 5 4-5" />
+        <path d="M35 27v11" />
+      </svg>
+    ),
     foldingGlass: (
       <svg aria-hidden="true" {...commonProps}>
         <path d="M8 38V10h32v28" />
@@ -158,6 +204,32 @@ function ServiceIcon({ type }) {
         <path d="M16 30h5" />
         <path d="M27 30h5" />
         <path d="M8 39h32" />
+      </svg>
+    ),
+    screen: (
+      <svg aria-hidden="true" {...commonProps}>
+        <path d="M9 10h30v28H9z" />
+        <path d="M15 10v28" />
+        <path d="M21 10v28" />
+        <path d="M27 10v28" />
+        <path d="M33 10v28" />
+        <path d="M9 16h30" />
+        <path d="M9 22h30" />
+        <path d="M9 28h30" />
+        <path d="M9 34h30" />
+      </svg>
+    ),
+    mechanism: (
+      <svg aria-hidden="true" {...commonProps}>
+        <path d="M24 16a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" />
+        <path d="M24 8v5" />
+        <path d="M24 35v5" />
+        <path d="m12.7 12.7 3.5 3.5" />
+        <path d="m31.8 31.8 3.5 3.5" />
+        <path d="M8 24h5" />
+        <path d="M35 24h5" />
+        <path d="m12.7 35.3 3.5-3.5" />
+        <path d="m31.8 16.2 3.5-3.5" />
       </svg>
     ),
   };
@@ -252,11 +324,6 @@ export default function Home() {
               </div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
-              <ul className="service-features">
-                {service.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>
@@ -297,7 +364,13 @@ export default function Home() {
 
         <div className="product-list">
           {products.map((product) => (
-            <span key={product}>{product}</span>
+            <article className="product-card" key={product.title}>
+              <span className="product-icon" aria-hidden="true">
+                <ServiceIcon type={product.icon} />
+              </span>
+              <h3>{product.title}</h3>
+              <p>{product.text}</p>
+            </article>
           ))}
         </div>
       </section>
@@ -305,7 +378,7 @@ export default function Home() {
       <section id="projekte" className="section projects-section">
         <div className="section-heading">
           <p className="eyebrow">Projektet</p>
-          <h2>Punime reale nga faqja publike KenzaRoll.</h2>
+          <h2>Projekte te realizuara nga KENZA Roll & Tech.</h2>
         </div>
 
         <ProjectGallery projects={projects} />
