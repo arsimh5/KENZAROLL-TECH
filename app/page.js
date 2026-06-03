@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactForm from "./ContactForm";
 import ProjectGallery from "./ProjectGallery";
 
 const services = [
@@ -7,30 +8,35 @@ const services = [
     text: "Dyer alumini dhe PVC per hyrje, ballkone, lokale dhe objekte banimi.",
     accent: "tech",
     icon: "door",
+    features: ["Alumin / PVC", "Izolim", "Montim i paster"],
   },
   {
     title: "Dritare",
     text: "Dritare me izolim termik dhe akustik, te pershtatura sipas matjeve.",
     accent: "tech",
     icon: "window",
+    features: ["Termoizolim", "Akustike", "Profile moderne"],
   },
   {
     title: "Roleta",
     text: "Roleta te jashtme dhe sisteme mbrojtese per hije, siguri dhe rehati.",
     accent: "roll",
     icon: "shutter",
+    features: ["Manuale / elektrike", "Hije", "Siguri"],
   },
   {
     title: "Xhama palues",
     text: "Sisteme xhamash palues per ballkone, terasa dhe ambiente me hapje panoramike.",
     accent: "tech",
     icon: "foldingGlass",
+    features: ["Ballkone", "Terasa", "Pamje panoramike"],
   },
   {
     title: "Fasada ventiluese",
     text: "Fasada ventiluese per objekte moderne, me pamje te paster dhe qarkullim te mire ajri.",
     accent: "roll",
     icon: "facade",
+    features: ["Objekte moderne", "Qarkullim ajri", "Pamje elegante"],
   },
 ];
 
@@ -246,6 +252,11 @@ export default function Home() {
               </div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
+              <ul className="service-features">
+                {service.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -317,7 +328,7 @@ export default function Home() {
       </section>
 
       <section id="kontakt" className="contact-section">
-        <div>
+        <div className="contact-copy">
           <p className="eyebrow">Kontakt</p>
           <h2>Gati per matje ose oferte?</h2>
           <p>
@@ -325,24 +336,24 @@ export default function Home() {
             objektit tuaj. Kryejme edhe xhama palues dhe fasada ventiluese ne
             Komoran dhe zonat perreth.
           </p>
+
+          <div className="contact-info">
+            <a href="tel:+38344467351">
+              <span>Telefon</span>
+              044 467 351
+            </a>
+            <p>
+              <span>Adresa</span>
+              Komoran, Drenas
+            </p>
+            <a href="https://wa.me/38344467351">
+              <span>WhatsApp</span>
+              Dergo mesazh
+            </a>
+          </div>
         </div>
 
-        <div className="contact-actions">
-          <a className="btn primary" href="tel:+38344467351">
-            044 467 351
-          </a>
-          <a className="btn whatsapp" href="https://wa.me/38344467351">
-            WhatsApp
-          </a>
-          <a
-            className="btn secondary"
-            href="https://www.facebook.com/profile.php?id=100054425593621"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Facebook
-          </a>
-        </div>
+        <ContactForm />
       </section>
 
       <footer>
