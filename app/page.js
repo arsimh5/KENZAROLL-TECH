@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 import ProjectGallery from "./ProjectGallery";
+import VekaProfiles from "./VekaProfiles";
 
 const services = [
   {
@@ -60,7 +61,7 @@ const products = [
   },
   {
     title: "Dritare alumini",
-    text: "Profile moderne per objekte banimi dhe hapësira biznesi.",
+    text: "Profile moderne per objekte banimi dhe hapesira biznesi.",
     icon: "window",
   },
   {
@@ -92,6 +93,72 @@ const products = [
     title: "Aksesore dhe mekanizma",
     text: "Pjese percjellese, mekanizma dhe mirembajtje sipas nevojes.",
     icon: "mechanism",
+  },
+];
+
+const vekaProfiles = [
+  {
+    title: "SOFTLINE 82 MD",
+    text: "Sistemi inovativ per kursimin e energjise e cila permbush kerkesat e se ardhmes.",
+    description:
+      "SOFTLINE 82 MD eshte profil VEKA per dritare dhe dyer me fokus ne kursim energjie, izolim te larte dhe zgjidhje moderne per objektet qe kerkojne performance afatgjate.",
+    uf: "Uf 1,0 W/(m2K)",
+    depth: "82 mm",
+    bestFor: "objekte me kerkesa te larta izolimi",
+  },
+  {
+    title: "SOFTLINE 76 MD",
+    text: "Dizajni klasik me performanca te larta.",
+    description:
+      "SOFTLINE 76 MD kombinon dizajn klasik me performance te larte per dritare dhe dyer. Eshte zgjidhje e balancuar per izolim, qendrueshmeri dhe pamje te paster.",
+    uf: "Uf 1,1 W/(m2K)",
+    depth: "76 mm",
+    bestFor: "dritare dhe dyer efikase",
+  },
+  {
+    title: "ARTLINE 82",
+    text: "Elegance e persosur.",
+    description:
+      "ARTLINE 82 eshte profil per projekte ku pamja arkitekturore ka rendesi te madhe. Linjat e pastra krijojne dukje elegante dhe moderne per fasada, dritare dhe dyer.",
+    uf: "Uf 1,0 W/(m2K)",
+    depth: "82 mm",
+    bestFor: "arkitekture moderne dhe pamje elegante",
+  },
+  {
+    title: "SOFTLINE 70 AD",
+    text: "Sistemi klasik dhe modern.",
+    description:
+      "SOFTLINE 70 AD eshte sistem klasik dhe modern per zgjidhje te qendrueshme. I pershtatet objekteve te ndryshme ku kerkohet profil praktik, i bukur dhe funksional.",
+    uf: "Uf 1,3 W/(m2K)",
+    depth: "70 mm",
+    bestFor: "banesa dhe lokale",
+  },
+  {
+    title: "SWINGLINE",
+    text: "Sistemi konturave te rrumbullaketa.",
+    description:
+      "SWINGLINE sjell kontura te rrumbullaketa dhe pamje me te bute vizuale. Eshte i pershtatshem per objekte qe kerkojne profil me karakter dekorativ.",
+    uf: "Uf 1,3 W/(m2K)",
+    depth: "70 mm",
+    bestFor: "dizajn me kontura te buta",
+  },
+  {
+    title: "SOFTLINE 70 MD",
+    text: "Sistemi i dizajnit klasik me tre gomina mbyllese.",
+    description:
+      "SOFTLINE 70 MD perdor dizajn klasik me tre gomina mbyllese, duke ndihmuar ne izolim dhe mbyllje te sigurt per dritare dhe dyer.",
+    uf: "Uf 1,2 W/(m2K)",
+    depth: "70 mm",
+    bestFor: "mbyllje e sigurt dhe izolim",
+  },
+  {
+    title: "EFFECTLINE",
+    text: "Sistemi ekonomik per objekte te banimit dhe te biznesit.",
+    description:
+      "EFFECTLINE eshte sistem ekonomik VEKA per objekte banimi dhe biznesi. Ofron zgjidhje praktike per projekte ku kerkohet raport i mire mes cilesise, funksionit dhe kostos.",
+    uf: "Uf 1,3 W/(m2K)",
+    depth: "70 mm",
+    bestFor: "zgjidhje ekonomike per objekte",
   },
 ];
 
@@ -262,6 +329,7 @@ export default function Home() {
         <nav aria-label="Navigimi kryesor">
           <a href="#sherbime">Sherbime</a>
           <a href="#produkte">Produkte</a>
+          <a href="#profilet">Profilet</a>
           <a href="#projekte">Projekte</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
@@ -279,8 +347,8 @@ export default function Home() {
             <a className="btn primary" href="#kontakt">
               Kerko oferte
             </a>
-            <a className="btn secondary" href="#produkte">
-              Shiko produktet
+            <a className="btn secondary" href="#profilet">
+              Profilet VEKA
             </a>
           </div>
         </div>
@@ -373,6 +441,27 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="profilet" className="section veka-section">
+        <div className="section-heading">
+          <p className="eyebrow">Profilet VEKA</p>
+          <h2>Profile PVC per dritare dhe dyer me performanca te larta.</h2>
+        </div>
+
+        <div className="veka-intro">
+          <div>
+            <span>VEKA Profile</span>
+            <p>
+              Modelet me te njohura VEKA per dritare dhe dyer, te paraqitura
+              qarte per zgjedhje me te lehte sipas izolimit, dizajnit dhe
+              nevojes se objektit.
+            </p>
+          </div>
+          <strong>7 sisteme profili</strong>
+        </div>
+
+        <VekaProfiles profiles={vekaProfiles} />
       </section>
 
       <section id="projekte" className="section projects-section">
