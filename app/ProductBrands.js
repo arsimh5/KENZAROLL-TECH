@@ -20,9 +20,9 @@ function WindowIcon() {
   );
 }
 
-export default function VekaProfiles({ profiles }) {
+export default function ProductBrands({ products }) {
   const [activeIndex, setActiveIndex] = useState(null);
-  const activeProfile = activeIndex === null ? null : profiles[activeIndex];
+  const activeProduct = activeIndex === null ? null : products[activeIndex];
 
   useEffect(() => {
     if (activeIndex === null) {
@@ -47,10 +47,10 @@ export default function VekaProfiles({ profiles }) {
   return (
     <>
       <div className="veka-grid">
-        {profiles.map((profile, index) => (
+        {products.map((product, index) => (
           <button
             className="veka-card"
-            key={profile.title}
+            key={product.title}
             onClick={() => setActiveIndex(index)}
             type="button"
           >
@@ -58,21 +58,21 @@ export default function VekaProfiles({ profiles }) {
               <span className="veka-icon" aria-hidden="true">
                 <WindowIcon />
               </span>
-              <span className="veka-depth">{profile.depth}</span>
+              <span className="veka-depth">{product.brand ?? "PVC"}</span>
             </div>
-            <h3>{profile.title}</h3>
-            <p>{profile.text}</p>
+            <h3>{product.title}</h3>
+            <p>{product.text}</p>
             <div className="veka-card-footer">
-              <span className="veka-metric">{profile.uf}</span>
+              <span className="veka-metric">{product.uf}</span>
               <span className="veka-more">Detaje</span>
             </div>
           </button>
         ))}
       </div>
 
-      {activeProfile ? (
+      {activeProduct ? (
         <div
-          aria-label={`Detajet per ${activeProfile.title}`}
+          aria-label={`Detajet per ${activeProduct.title}`}
           aria-modal="true"
           className="veka-modal"
           role="dialog"
@@ -92,30 +92,30 @@ export default function VekaProfiles({ profiles }) {
                 <WindowIcon />
               </span>
               <div>
-                <p className="eyebrow">Profili VEKA</p>
-                <h3>{activeProfile.title}</h3>
+                <p className="eyebrow">Produktet {activeProduct.brand ?? "PVC"}</p>
+                <h3>{activeProduct.title}</h3>
               </div>
             </div>
 
-            <p className="veka-modal-text">{activeProfile.description}</p>
+            <p className="veka-modal-text">{activeProduct.description}</p>
 
             <div className="veka-detail-grid">
               <span>
-                <strong>Izolimi</strong>
-                {activeProfile.uf}
+                <strong>Perdorimi</strong>
+                {activeProduct.uf}
               </span>
               <span>
-                <strong>Thellesia</strong>
-                {activeProfile.depth}
+                <strong>Kategoria</strong>
+                {activeProduct.depth}
               </span>
               <span>
                 <strong>Pershtatja</strong>
-                {activeProfile.bestFor}
+                {activeProduct.bestFor}
               </span>
             </div>
 
             <a className="btn primary" href="#kontakt" onClick={() => setActiveIndex(null)}>
-              Kerko oferte per kete profil
+              Kerko oferte per keto produkte
             </a>
           </article>
         </div>
