@@ -122,10 +122,11 @@ export default function ProjectGallery({ projects, variant = "section" }) {
             <div className="hero-project-content">
               <p className="eyebrow">KENZA Roll & Tech</p>
               <span>{currentProject.category}</span>
-              <h1>Dyer, dritare, roleta dhe fasada moderne.</h1>
+              <h1>Dyer dhe dritare ne Drenas.</h1>
               <p>
-                Projekte te realizuara me matje, prodhim dhe montim profesional
-                per banesa, lokale dhe objekte biznesi.
+                Dritare PVC e alumini, roleta, xhama palues dhe fasada ventiluese.
+                Matje, prodhim sipas porosise dhe montim nga KENZA ne Komoran
+                dhe zonat perreth.
               </p>
               <div className="hero-proof" aria-label="Pikat kryesore">
                 <span>Matje ne objekt</span>
@@ -133,10 +134,10 @@ export default function ProjectGallery({ projects, variant = "section" }) {
                 <span>Komoran, Drenas</span>
               </div>
               <div className="hero-actions">
-                <a className="btn primary" href="#kontakt">
+                <a className="btn primary" href="/kontakt">
                   Kerko oferte
                 </a>
-                <a className="btn secondary dark" href="#sherbime">
+                <a className="btn secondary dark" href="/sherbime">
                   Cfare ofrojme
                 </a>
               </div>

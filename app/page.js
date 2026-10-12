@@ -1,295 +1,104 @@
 import Image from "next/image";
-import ContactForm from "./ContactForm";
-import ProductBrands from "./ProductBrands";
+import Link from "next/link";
 import ProjectGallery from "./ProjectGallery";
+import SiteFooter from "./SiteFooter";
+import SiteHeader from "./SiteHeader";
+import { brandProducts } from "./productData";
+import { highlights, projects, services } from "./siteData";
+import { createPageMetadata } from "./seo";
 
-const highlights = [
-  "Matje ne objekt",
-  "Prodhim sipas porosise",
-  "Montim profesional",
-  "Servis dhe mirembajtje",
-];
+export const metadata = createPageMetadata("/");
 
-const metrics = [
-  { value: "10+", label: "kategori produktesh" },
-  { value: "3", label: "marka PVC" },
-  { value: "1", label: "ekip per matje dhe montim" },
-];
+const featuredServices = [services[1], services[3], services[5], services[6]];
+const featuredProjects = projects.slice(0, 3);
 
-const products = [
-  {
-    title: "Dyer te jashtme",
-    text: "Hyrje te sigurta dhe te qendrueshme per shtepi apo lokale.",
-    icon: "door",
-    image: "/products/dyer-te-jashtme.png",
-  },
-  {
-    title: "Dyer te brendshme",
-    text: "Zgjidhje praktike me pamje te paster per ambiente te brendshme.",
-    icon: "door",
-    image: "/products/dyer-te-brendshme.png",
-  },
-  {
-    title: "Dritare PVC",
-    text: "Izolim i mire termik dhe akustik, sipas matjeve ne objekt.",
-    icon: "window",
-    image: "/products/dritare-pvc.png",
-  },
-  {
-    title: "Dritare alumini",
-    text: "Sisteme moderne per objekte banimi dhe hapesira biznesi.",
-    icon: "window",
-    image: "/products/dritare-alumini.png",
-  },
-  {
-    title: "Roleta alumini",
-    text: "Mbrojtje nga dielli, privatese dhe siguri per dritare.",
-    icon: "shutter",
-    image: "/products/roleta-alumini.png",
-  },
-  {
-    title: "Roleta elektrike",
-    text: "Komoditet me hapje dhe mbyllje te kontrolluar elektrikisht.",
-    icon: "electricShutter",
-    image: "/products/roleta-elektrike.png",
-  },
-  {
-    title: "Xhama palues per ballkon",
-    text: "Mbyllje elegante per ballkone dhe terasa me pamje panoramike.",
-    icon: "foldingGlass",
-    image: "/products/xhama-palues.png",
-  },
-  {
-    title: "Fasada ventiluese",
-    text: "Sistem fasade per objekte moderne me qarkullim ajri.",
-    icon: "facade",
-    image: "/products/fasada-ventiluese.png",
-  },
-  {
-    title: "Rrjeta kunder insekteve",
-    text: "Rrjeta te pershtatura per dritare dhe dyer, praktike ne perdorim.",
-    icon: "screen",
-    image: "/products/rrjeta-kunder-insekteve.png",
-  },
-  {
-    title: "Aksesore dhe mekanizma",
-    text: "Pjese percjellese, mekanizma dhe mirembajtje sipas nevojes.",
-    icon: "mechanism",
-    image: "/products/aksesore-mekanizma.png",
-  },
-];
-
-const brandProducts = [
-  {
-    title: "Produktet VEKA",
-    brand: "VEKA",
-    text: "Produkte VEKA per dritare dhe dyer PVC, te pershtatura per izolim, qendrueshmeri dhe pamje te paster.",
-    description:
-      "Per dritare dhe dyer PVC perdorim edhe produkte VEKA, te zgjedhura sipas kerkeses se objektit per izolim, dizajn dhe perdorim afatgjate.",
-    uf: "Dritare dhe dyer",
-    depth: "PVC",
-    bestFor: "objekte banimi dhe biznesi",
-  },
-  {
-    title: "Produktet Salamander",
-    brand: "Salamander",
-    text: "Produkte Salamander per dritare dhe dyer PVC me fokus ne funksionalitet dhe izolim te mire.",
-    description:
-      "Produktet Salamander jane pjese e ofertes per dritare dhe dyer PVC. Zgjedhja behet sipas dimensioneve, stilit te objektit dhe nevojes per izolim.",
-    uf: "Dritare dhe dyer",
-    depth: "PVC",
-    bestFor: "zgjidhje moderne per shtepi dhe lokale",
-  },
-  {
-    title: "Produktet Baufens",
-    brand: "Baufens",
-    text: "Produkte Baufens per dritare dhe dyer PVC, praktike per projekte te ndryshme dhe montim te paster.",
-    description:
-      "Produktet Baufens perdoren per dritare dhe dyer PVC ne projekte ku kerkohet zgjidhje funksionale, e qendrueshme dhe e pershtatur me buxhetin.",
-    uf: "Dritare dhe dyer",
-    depth: "PVC",
-    bestFor: "banesa, lokale dhe objekte biznesi",
-  },
-];
-
-const projects = [
-  {
-    title: "Roleta per objekt banimi",
-    category: "Roleta alumini",
-    image: "/projects/project-01.jpg",
-    width: 590,
-    height: 443,
-  },
-  {
-    title: "Mbyllje ballkoni me xhama",
-    category: "Xhama palues",
-    image: "/projects/project-02.jpg",
-    width: 590,
-    height: 443,
-  },
-  {
-    title: "Sistem roletash ne fasade",
-    category: "Roleta te jashtme",
-    image: "/projects/project-03.jpg",
-    width: 590,
-    height: 443,
-  },
-  {
-    title: "Punim teknik per ballkon",
-    category: "Xhama dhe sisteme",
-    image: "/projects/project-04.jpg",
-    width: 434,
-    height: 590,
-  },
-  {
-    title: "Roleta me montim te paster",
-    category: "Montim profesional",
-    image: "/projects/project-05.jpg",
-    width: 590,
-    height: 443,
-  },
-  {
-    title: "Projekt i realizuar KENZA",
-    category: "Dyer, dritare, roleta",
-    image: "/projects/project-06.jpg",
-    width: 960,
-    height: 536,
-  },
-];
+function getBrandHref(brand) {
+  const slug = brand.slug ?? brand.brand.toLowerCase();
+  return `/markat#${slug}`;
+}
 
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="KENZA Roll dhe KENZA Tech">
-          <Image
-            src="/kenza-roll-logo.jpg"
-            alt="KENZA Roll"
-            width={1659}
-            height={196}
-            priority
-          />
-          <span />
-          <Image
-            src="/kenza-tech-logo.jpg"
-            alt="KENZA Tech"
-            width={1791}
-            height={225}
-            priority
-          />
-        </a>
+      <SiteHeader />
 
-        <nav className="main-nav" aria-label="Navigimi kryesor">
-          <a href="#top">Ballina</a>
-          <a href="#sherbime">Sherbime</a>
-          <a href="#markat">Markat</a>
-          <a href="#projekte">Projekte</a>
-          <a href="#kontakt" className="nav-cta">
-            Kontakt
-          </a>
-        </nav>
-      </header>
-
-      <section id="top" className="top-projects-hero">
-        <div id="projekte">
-          <ProjectGallery projects={projects} variant="hero" />
-        </div>
+      <section className="top-projects-hero">
+        <ProjectGallery projects={projects} variant="hero" />
       </section>
 
-      <section id="sherbime" className="section services-section">
-        <div className="section-heading">
+      <section className="section home-services">
+        <div className="home-section-head">
           <div>
-            <p className="eyebrow">Cfare ofrojme</p>
-            <div className="metric-strip" aria-label="Permbledhje e sherbimeve">
-              {metrics.map((metric) => (
-                <span key={metric.label}>
-                  <strong>{metric.value}</strong>
-                  {metric.label}
-                </span>
-              ))}
-            </div>
+            <p className="eyebrow">Zgjidhje per objektin</p>
+            <h2>Dyer, dritare PVC dhe roleta ne Komoran, Drenas.</h2>
           </div>
-          <h2>Dyer, dritare, roleta dhe sisteme moderne per objektin tuaj.</h2>
+          <div className="home-section-side">
+            <p>
+              KENZA Roll dhe KENZA Tech realizojne dyer te jashtme, dritare PVC
+              e alumini, roleta, xhama palues dhe fasada ventiluese per shtepi,
+              lokale dhe objekte biznesi ne Drenas dhe zonat perreth.
+            </p>
+            <Link className="text-link" href="/sherbime">
+              Shiko te gjitha sherbimet <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
         </div>
 
-        <div className="product-list">
-          {products.map((product) => (
-            <article className="product-card" key={product.title}>
-              <div className="product-media">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  width={590}
-                  height={443}
-                />
+        <div className="home-service-grid">
+          {featuredServices.map((service) => (
+            <Link className="home-service-card" href="/sherbime" key={service.title}>
+              <div className="home-service-media">
+                <Image src={service.image} alt={service.title} width={590} height={443} />
               </div>
-              <div className="product-content">
-                <span>{product.title.split(" ")[0]}</span>
-                <h3>{product.title}</h3>
-                <p>{product.text}</p>
+              <div>
+                <span>{service.title.split(" ")[0]}</span>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="split-section">
-        <div className="brand-panel roll-panel">
-          <span className="brand-kicker">Mbrojtje dhe komoditet</span>
-          <Image
-            src="/kenza-roll-logo.jpg"
-            alt="KENZA Roll"
-            width={1659}
-            height={196}
-          />
+      <section className="home-brands">
+        <div className="home-brands-copy">
+          <p className="eyebrow">Marka te zgjedhura</p>
+          <h2>Profile PVC VEKA, Salamander dhe Baufens.</h2>
           <p>
-            Specializim ne roleta, sisteme mbrojtese dhe zgjidhje praktike per
-            hije, privatese dhe siguri.
+            Krahasoni thellesine e profileve, llojin e xhamit dhe izolimin e
+            sistemeve per dritare e dyer PVC. Zgjedhja pershtatet me objektin,
+            dimensionet dhe kerkesat tuaja.
           </p>
+          <Link className="btn primary" href="/markat">
+            Hap katalogun e produkteve
+          </Link>
         </div>
-        <div className="brand-panel tech-panel">
-          <span className="brand-kicker">Sisteme per objektin</span>
-          <Image
-            src="/kenza-tech-logo.jpg"
-            alt="KENZA Tech"
-            width={1791}
-            height={225}
-          />
-          <p>
-            Dyer, dritare, xhama palues dhe fasada ventiluese me materiale
-            cilesore, profil modern dhe montim te kujdesshem.
-          </p>
+
+        <div className="home-brand-grid">
+          {brandProducts.map((brand) => (
+            <Link className="home-brand-card" href={getBrandHref(brand)} key={brand.brand}>
+              <Image
+                src={brand.coverImage}
+                alt={`Produktet ${brand.brand}`}
+                width={780}
+                height={520}
+              />
+              <div>
+                <span>{brand.brand}</span>
+                <strong>{brand.systems.length} produkte</strong>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      <section id="markat" className="section veka-section">
-        <div className="section-heading">
-          <p className="eyebrow">Markat qe perdorim</p>
-          <h2>Perdorim produkte VEKA, Salamander dhe Baufens.</h2>
-        </div>
-
-        <div className="veka-intro">
-          <div>
-            <span>VEKA | Salamander | Baufens</span>
-            <p>
-              Per dritare dhe dyer PVC perdorim produkte nga VEKA, Salamander
-              dhe Baufens. Zgjedhja behet sipas izolimit, dizajnit,
-              dimensioneve dhe nevojes se objektit.
-            </p>
-          </div>
-          <strong>3 marka produktesh</strong>
-        </div>
-
-        <ProductBrands products={brandProducts} />
-      </section>
-
-      <section className="process-section">
+      <section className="process-section home-process">
         <div>
-          <p className="eyebrow">Procesi</p>
-          <h2>Nga matja deri te montimi.</h2>
+          <p className="eyebrow">Si punojme</p>
+          <h2>Nje proces i qarte, nga ideja deri te montimi.</h2>
           <p>
-            Proces i qarte per porosi sipas dimensioneve, me komunikim direkt
-            dhe montim te kujdesshem ne objekt.
+            Cdo porosi pershtatet sipas dimensioneve, perdorimit dhe kerkesave
+            teknike te objektit.
           </p>
         </div>
 
@@ -303,39 +112,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="kontakt" className="contact-section">
-        <div className="contact-copy">
-          <p className="eyebrow">Kontakt</p>
-          <h2>Gati per matje ose oferte?</h2>
-          <p>
-            Na kontaktoni per dyer, dritare dhe roleta sipas dimensioneve te
-            objektit tuaj. Kryejme edhe xhama palues dhe fasada ventiluese ne
-            Komoran dhe zonat perreth.
-          </p>
-
-          <div className="contact-info">
-            <a href="tel:+38344467351">
-              <span>Telefon</span>
-              044 467 351
-            </a>
+      <section className="section home-projects">
+        <div className="home-section-head">
+          <div>
+            <p className="eyebrow">Nga puna jone</p>
+            <h2>Projekte te perfunduara me kujdes ne cdo detaj.</h2>
+          </div>
+          <div className="home-section-side">
             <p>
-              <span>Adresa</span>
-              Komoran, Drenas
+              Shikoni disa nga punimet tona me roleta, xhama palues dhe sisteme
+              per banesa e biznese.
             </p>
-            <a href="https://wa.me/38344467351">
-              <span>WhatsApp</span>
-              Dergo mesazh
-            </a>
+            <Link className="text-link" href="/projekte">
+              Shiko galerine e projekteve <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
         </div>
 
-        <ContactForm />
+        <div className="home-project-grid">
+          {featuredProjects.map((project) => (
+            <Link className="home-project-card" href="/projekte" key={project.title}>
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={project.width}
+                height={project.height}
+              />
+              <div>
+                <span>{project.category}</span>
+                <h3>{project.title}</h3>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
-      <footer>
-        <p>KENZA Roll & KENZA Tech</p>
-        <p>Dyer | Dritare | Roleta | Xhama palues | Fasada ventiluese</p>
-      </footer>
+      <section className="home-contact-band">
+        <div>
+          <p className="eyebrow">Matje dhe oferte</p>
+          <h2>Keni nje projekt ne plan?</h2>
+          <p>
+            Na tregoni dimensionet dhe llojin e produktit. Ekipi yne ju ndihmon
+            me zgjedhjen, matjen dhe montimin.
+          </p>
+        </div>
+        <div className="home-contact-actions">
+          <Link className="btn primary" href="/kontakt">
+            Kerko oferte
+          </Link>
+          <a className="btn secondary dark" href="tel:+38344467351">
+            044 467 351
+          </a>
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }
