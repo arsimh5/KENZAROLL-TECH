@@ -85,7 +85,6 @@ export default function Home() {
               />
               <div>
                 <span>{brand.brand}</span>
-                <strong>{brand.systems.length} produkte</strong>
               </div>
             </Link>
           ))}
@@ -131,7 +130,7 @@ export default function Home() {
 
         <div className="home-project-grid">
           {featuredProjects.map((project) => (
-            <Link className="home-project-card" href="/projekte" key={project.title}>
+            <Link className="home-project-card" href={`/projekte#${project.slug}`} key={project.slug}>
               <Image
                 src={project.image}
                 alt={project.title}

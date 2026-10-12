@@ -31,12 +31,12 @@ export default function SiteHeader() {
   return (
     <header className={`site-header${menuOpen ? " menu-open" : ""}`}>
       <Link
-        className="brand brand-tech"
+        className="brand brand-roll"
         href="/"
-        aria-label="KENZA Tech - Ballina"
+        aria-label="KENZA Roll - Ballina"
         onClick={() => setMenuOpen(false)}
       >
-        <Image src="/kenza-tech-logo.jpg" alt="KENZA Tech" width={1791} height={225} priority />
+        <Image src="/kenza-roll-logo.jpg" alt="KENZA Roll" width={1659} height={196} priority />
       </Link>
 
       <button
@@ -79,12 +79,12 @@ export default function SiteHeader() {
       </nav>
 
       <Link
-        className="brand brand-roll"
+        className="brand brand-tech"
         href="/"
-        aria-label="KENZA Roll - Ballina"
+        aria-label="KENZA Tech - Ballina"
         onClick={() => setMenuOpen(false)}
       >
-        <Image src="/kenza-roll-logo.jpg" alt="KENZA Roll" width={1659} height={196} priority />
+        <Image src="/kenza-tech-logo.jpg" alt="KENZA Tech" width={1791} height={225} priority />
       </Link>
     </header>
   );

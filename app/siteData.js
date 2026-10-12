@@ -24,10 +24,32 @@ export const services = [
 ];
 
 export const projects = [
-  { title: "Roleta per objekt banimi", category: "Roleta alumini", image: "/projects/project-01.jpg", width: 590, height: 443 },
-  { title: "Mbyllje ballkoni me xhama", category: "Xhama palues", image: "/projects/project-02.jpg", width: 590, height: 443 },
-  { title: "Sistem roletash ne fasade", category: "Roleta te jashtme", image: "/projects/project-03.jpg", width: 590, height: 443 },
-  { title: "Punim teknik per ballkon", category: "Xhama dhe sisteme", image: "/projects/project-04.jpg", width: 434, height: 590 },
-  { title: "Roleta me montim te paster", category: "Montim profesional", image: "/projects/project-05.jpg", width: 590, height: 443 },
-  { title: "Projekt i realizuar KENZA", category: "Dyer, dritare, roleta", image: "/projects/project-06.jpg", width: 960, height: 536 },
-];
+  {
+    slug: "terase-xhama-palues",
+    title: "Mbyllje terase me xhama palues",
+    category: "Xhama palues",
+    sourceUrl: "https://www.facebook.com/photo/?fbid=1247093567114818&set=pcb.1247093900448118",
+    photos: [
+      { src: "/projects/terrace-01.jpg", width: 2048, height: 1536, alt: "Xhamat palues te terases, pamje nga brenda" },
+      { src: "/projects/terrace-02.jpg", width: 2048, height: 1536, alt: "Kendi i terases se mbyllur me xhama" },
+      { src: "/projects/terrace-03.jpg", width: 2048, height: 1536, alt: "Pamje e plote e sistemit te xhamave palues" },
+      { src: "/projects/terrace-04.jpg", width: 736, height: 1000, alt: "Montimi i xhamave palues dhe hapja e paneleve" },
+      { src: "/projects/terrace-05.jpg", width: 2048, height: 1536, alt: "Terasa me xhama palues, pamje e jashtme" },
+      { src: "/projects/terrace-06.jpg", width: 736, height: 1000, alt: "Detaji i xhamave ne anen e terases" },
+      { src: "/projects/terrace-07.jpg", width: 736, height: 1000, alt: "Terasa me xhama palues dhe ndricim ne mbremje" },
+      { src: "/projects/terrace-08.jpg", width: 736, height: 1000, alt: "Pamje anesore e terases ne mbremje" },
+      { src: "/projects/terrace-09.jpg", width: 2048, height: 1536, alt: "Pamje ballore e terases se perfunduar ne mbremje" },
+    ],
+  },
+  {
+    slug: "ballkon-panoramik",
+    title: "Mbyllje ballkoni panoramik",
+    category: "Xhama per ballkon",
+    photos: [{ src: "/projects/project-06.jpg", width: 960, height: 536 }],
+  },
+].map((project) => ({
+  ...project,
+  image: project.photos[0].src,
+  width: project.photos[0].width,
+  height: project.photos[0].height,
+}));
