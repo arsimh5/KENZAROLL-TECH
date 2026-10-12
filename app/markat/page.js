@@ -16,7 +16,7 @@ export default function BrandsPage() {
         <p>
           Sisteme per dritare, dyer dhe hapje rreshqitese me fotografi dhe te
           dhena teknike. KENZA ju ndihmon me zgjedhjen, matjen dhe montimin
-          ne Komoran, Drenas dhe zonat perreth.
+          ne Drenas dhe zonat perreth.
         </p>
       </section>
 

@@ -79,13 +79,13 @@ export default function ProjectGallery({ projects, variant = "section" }) {
               <h1>Dyer dhe dritare ne Drenas.</h1>
               <p>
                 Dritare PVC e alumini, roleta, xhama palues dhe fasada ventiluese.
-                Matje, prodhim sipas porosise dhe montim nga KENZA ne Komoran
+                Matje, prodhim sipas porosise dhe montim nga KENZA ne Drenas
                 dhe zonat perreth.
               </p>
               <div className="hero-proof" aria-label="Pikat kryesore">
                 <span>Matje ne objekt</span>
                 <span>Porosi sipas dimensionit</span>
-                <span>Komoran, Drenas</span>
+                <span>Drenas</span>
               </div>
               <div className="hero-actions">
                 <a className="btn primary" href="/kontakt">Kerko oferte</a>

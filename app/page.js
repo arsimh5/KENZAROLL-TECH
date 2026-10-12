@@ -33,7 +33,7 @@ export default function Home() {
         <p className="eyebrow">Zgjidhje per objektin</p>
         <div className="home-section-head">
           <div>
-            <h2>Dyer, dritare PVC dhe roleta ne Komoran, Drenas.</h2>
+            <h2>Dyer, dritare PVC dhe roleta ne Drenas.</h2>
           </div>
           <div className="home-section-side">
             <p>

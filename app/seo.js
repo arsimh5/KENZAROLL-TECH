@@ -19,42 +19,42 @@ export const seoPages = {
   "/": {
     title: "Dyer e dritare ne Drenas | KENZA Roll & Tech",
     description:
-      "Dyer, dritare PVC e alumini, roleta, xhama palues dhe fasada ventiluese ne Komoran, Drenas. KENZA ofron matje, prodhim sipas porosise dhe montim.",
+      "Dyer, dritare PVC e alumini, roleta, xhama palues dhe fasada ventiluese ne Drenas. KENZA ofron matje, prodhim sipas porosise dhe montim.",
   },
   "/sherbime": {
     title: "Dritare PVC, roleta e montim ne Drenas | KENZA",
     description:
-      "Shikoni dyer te jashtme, dritare PVC e alumini, roleta elektrike, xhama palues dhe fasada ventiluese. Matje dhe montim ne Komoran, Drenas e perreth.",
+      "Shikoni dyer te jashtme, dritare PVC e alumini, roleta elektrike, xhama palues dhe fasada ventiluese. Matje dhe montim ne Drenas e perreth.",
   },
   "/markat": {
     title: "Profile PVC VEKA, Salamander dhe Baufens | KENZA",
     description:
-      "Krahasoni sistemet PVC VEKA, Salamander dhe Baufens per dritare e dyer: profile, xham dhe izolim. Matje dhe montim nga KENZA ne Komoran, Drenas.",
+      "Krahasoni sistemet PVC VEKA, Salamander dhe Baufens per dritare e dyer: profile, xham dhe izolim. Matje dhe montim nga KENZA ne Drenas.",
   },
   "/markat/veka": {
     title: "Katalogu VEKA: dritare dhe dyer PVC | KENZA",
     description:
-      "Sistemet VEKA per dritare, dyer hyrjeje, rreshqitese dhe roleta. Fotografi dhe specifika teknike, me matje e montim nga KENZA ne Komoran, Drenas.",
+      "Sistemet VEKA per dritare, dyer hyrjeje, rreshqitese dhe roleta. Fotografi dhe specifika teknike, me matje e montim nga KENZA ne Drenas.",
   },
   "/markat/salamander": {
     title: "Katalogu Salamander: profile PVC | KENZA",
     description:
-      "Dritare, dyer dhe sisteme rreshqitese Salamander. Shikoni profilet, izolimin dhe te dhenat teknike. KENZA ne Komoran, Drenas.",
+      "Dritare, dyer dhe sisteme rreshqitese Salamander. Shikoni profilet, izolimin dhe te dhenat teknike. KENZA ne Drenas.",
   },
   "/markat/baufens": {
     title: "Katalogu Baufens: profile dhe panele PVC | KENZA",
     description:
-      "Profile uPVC, panele, pragje dhe roleta Baufens. Shfletoni fotografite dhe specifikat teknike me KENZA ne Komoran, Drenas.",
+      "Profile uPVC, panele, pragje dhe roleta Baufens. Shfletoni fotografite dhe specifikat teknike me KENZA ne Drenas.",
   },
   "/projekte": {
     title: "Projekte me roleta e xhama palues | KENZA Roll & Tech",
     description:
-      "Shikoni punimet KENZA me roleta alumini, mbyllje ballkonesh me xhama palues dhe sisteme per banesa e biznese. Matje dhe montim nga ekipi ne Komoran.",
+      "Shikoni punimet KENZA me roleta alumini, mbyllje ballkonesh me xhama palues dhe sisteme per banesa e biznese. Matje dhe montim nga ekipi ne Drenas.",
   },
   "/kontakt": {
-    title: "Kontakt ne Komoran, Drenas | KENZA Roll & Tech",
+    title: "Kontakt ne Drenas | KENZA Roll & Tech",
     description:
-      "Kontaktoni KENZA ne Komoran, Drenas: 044 467 351. Kerkoni matje dhe oferte per dyer, dritare PVC, roleta, xhama palues dhe fasada ventiluese.",
+      "Kontaktoni KENZA ne Drenas: 044 467 351. Kerkoni matje dhe oferte per dyer, dritare PVC, roleta, xhama palues dhe fasada ventiluese.",
   },
 };
 

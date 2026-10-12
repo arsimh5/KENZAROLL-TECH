@@ -25,11 +25,11 @@ const business = {
   telephone: "+38344467351",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Komoran",
+    addressLocality: "Drenas",
     addressRegion: "Drenas",
     addressCountry: "XK",
   },
-  areaServed: ["Komoran", "Drenas", "Gllogoc"],
+  areaServed: ["Drenas", "Gllogoc"],
   ...(siteUrl ? {
     "@id": `${siteUrl}/#business`,
     url: siteUrl,

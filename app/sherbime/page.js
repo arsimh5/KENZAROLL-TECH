@@ -17,7 +17,7 @@ export default function ServicesPage() {
         <h1>Dyer, dritare PVC dhe roleta ne Drenas.</h1>
         <p>
           Nga matja ne objekt deri te prodhimi, montimi dhe mirembajtja, punojme
-          sipas dimensioneve dhe kerkesave tuaja ne Komoran, Drenas dhe zonat
+          sipas dimensioneve dhe kerkesave tuaja ne Drenas dhe zonat
           perreth. Ofrojme edhe dritare alumini, xhama palues dhe fasada ventiluese.
         </p>
       </section>

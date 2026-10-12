@@ -12,7 +12,7 @@ export default function ContactPage() {
 
       <section className="page-intro">
         <p className="eyebrow">Kontakt</p>
-        <h1>Kontaktoni KENZA ne Komoran, Drenas.</h1>
+        <h1>Kontaktoni KENZA ne Drenas.</h1>
         <p>
           Kerkoni matje ne objekt, keshillim teknik dhe oferte per dyer,
           dritare, roleta, xhama palues ose fasada ventiluese. Na telefononi
@@ -39,7 +39,7 @@ export default function ContactPage() {
           <p>
             Na kontaktoni per dyer, dritare dhe roleta sipas dimensioneve te
             objektit tuaj. Kryejme edhe xhama palues dhe fasada ventiluese ne
-            Komoran dhe zonat perreth.
+            Drenas dhe zonat perreth.
           </p>
 
           <div className="contact-info">
@@ -49,7 +49,7 @@ export default function ContactPage() {
             </a>
             <p>
               <span>Adresa</span>
-              Komoran, Drenas
+              Drenas
             </p>
             <a href="https://wa.me/38344467351">
               <span>WhatsApp</span>
