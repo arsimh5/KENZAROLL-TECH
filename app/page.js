@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BrandDivisions from "./BrandDivisions";
 import ProjectGallery from "./ProjectGallery";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
@@ -14,7 +15,7 @@ const featuredProjects = projects.slice(0, 3);
 
 function getBrandHref(brand) {
   const slug = brand.slug ?? brand.brand.toLowerCase();
-  return `/markat#${slug}`;
+  return `/markat/${slug}`;
 }
 
 export default function Home() {
@@ -26,10 +27,12 @@ export default function Home() {
         <ProjectGallery projects={projects} variant="hero" />
       </section>
 
+      <BrandDivisions />
+
       <section className="section home-services">
+        <p className="eyebrow">Zgjidhje per objektin</p>
         <div className="home-section-head">
           <div>
-            <p className="eyebrow">Zgjidhje per objektin</p>
             <h2>Dyer, dritare PVC dhe roleta ne Komoran, Drenas.</h2>
           </div>
           <div className="home-section-side">
@@ -112,9 +115,9 @@ export default function Home() {
       </section>
 
       <section className="section home-projects">
+        <p className="eyebrow">Nga puna jone</p>
         <div className="home-section-head">
           <div>
-            <p className="eyebrow">Nga puna jone</p>
             <h2>Projekte te perfunduara me kujdes ne cdo detaj.</h2>
           </div>
           <div className="home-section-side">

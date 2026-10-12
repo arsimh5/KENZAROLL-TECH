@@ -83,7 +83,7 @@ main {
   top: 0;
   z-index: 30;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   align-items: center;
   justify-content: space-between;
@@ -115,16 +115,20 @@ main {
   justify-self: start;
 }
 
-.brand-tech {
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: end;
+.brand-crop {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1320 / 196;
+  overflow: hidden;
 }
 
-.brand img {
-  width: 100%;
+.brand-crop img {
+  max-width: none;
   height: auto;
-  object-fit: contain;
+}
+
+.brand-roll .brand-crop img {
+  width: 125.6818%;
 }
 
 .main-nav {
@@ -1464,6 +1468,65 @@ h1 {
   padding-bottom: 4px;
 }
 
+.brand-page-intro .catalog-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.brand-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.brand-page-nav a {
+  padding: 10px 0;
+  color: var(--muted-light);
+  border-bottom: 2px solid transparent;
+  font-weight: 800;
+}
+
+.brand-page-nav a:hover,
+.brand-page-nav a:focus-visible,
+.brand-page-nav a[aria-current="page"] {
+  color: var(--roll);
+  border-color: var(--roll);
+}
+
+.section.brand-catalog {
+  color: var(--ink);
+  background: #f4f7f8;
+}
+
+.brand-catalog-inner {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.brand-catalog .brand-system-head h2 {
+  font-size: 1.4rem;
+  overflow-wrap: anywhere;
+}
+
+.brand-catalog .brand-system-content {
+  min-width: 0;
+}
+
+.catalog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.brand-catalog .text-link {
+  color: #253e46;
+}
+
 .brand-filter button {
   min-height: 40px;
   padding: 9px 13px;
@@ -1536,7 +1599,8 @@ h1 {
   text-transform: uppercase;
 }
 
-.brand-system-head h4 {
+.brand-system-head h4,
+.brand-system-head h2 {
   margin: 0;
   color: var(--ink);
   font-size: clamp(1.25rem, 2vw, 1.72rem);
@@ -2273,12 +2337,8 @@ footer p {
   }
 
   .site-header {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .brand-tech {
-    grid-column: 2;
   }
 
   .main-nav {
@@ -2452,7 +2512,7 @@ footer p {
 @media (max-width: 620px) {
   .site-header {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 46px;
     gap: 8px;
     align-items: center;
     min-height: auto;
@@ -2463,10 +2523,6 @@ footer p {
     width: 100%;
     min-height: 46px;
     padding: 8px 10px;
-  }
-
-  .brand-tech {
-    grid-column: 3;
   }
 
   .menu-toggle {

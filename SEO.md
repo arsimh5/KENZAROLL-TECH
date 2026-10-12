@@ -6,7 +6,8 @@ empty because the production domain has not been confirmed.
 
 With `SITE_URL` configured, each public page has its own canonical URL and
 Open Graph URL. Social previews use the existing project photograph. The
-`/sitemap.xml` route includes the five public pages; `/robots.txt` links to it.
+`/sitemap.xml` route includes the five main pages and the VEKA, Salamander,
+and Baufens catalog pages; `/robots.txt` links to it.
 Without `SITE_URL`, canonical URLs and public image URLs are omitted and the
 sitemap is empty, so a guessed domain or localhost is not advertised.
 

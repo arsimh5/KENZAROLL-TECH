@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandDivisions from "../BrandDivisions";
 import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
 import { highlights, services } from "../siteData";
@@ -43,24 +44,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="split-section">
-        <div className="brand-panel roll-panel">
-          <span className="brand-kicker">Mbrojtje dhe komoditet</span>
-          <Image src="/kenza-roll-logo.jpg" alt="KENZA Roll" width={1659} height={196} />
-          <p>
-            Specializim ne roleta, sisteme mbrojtese dhe zgjidhje praktike per
-            hije, privatese dhe siguri.
-          </p>
-        </div>
-        <div className="brand-panel tech-panel">
-          <span className="brand-kicker">Sisteme per objektin</span>
-          <Image src="/kenza-tech-logo.jpg" alt="KENZA Tech" width={1791} height={225} />
-          <p>
-            Dyer, dritare, xhama palues dhe fasada ventiluese me materiale
-            cilesore, profil modern dhe montim te kujdesshem.
-          </p>
-        </div>
-      </section>
+      <BrandDivisions />
 
       <section className="process-section">
         <div>

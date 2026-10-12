@@ -33,10 +33,12 @@ export default function SiteHeader() {
       <Link
         className="brand brand-roll"
         href="/"
-        aria-label="KENZA Roll - Ballina"
+        aria-label="KENZA - Ballina"
         onClick={() => setMenuOpen(false)}
       >
-        <Image src="/kenza-roll-logo.jpg" alt="KENZA Roll" width={1659} height={196} priority />
+        <span className="brand-crop">
+          <Image src="/kenza-roll-logo.jpg" alt="KENZA" width={1659} height={196} priority />
+        </span>
       </Link>
 
       <button
@@ -59,7 +61,8 @@ export default function SiteHeader() {
         aria-label="Navigimi kryesor"
       >
         {navigation.map((item) => {
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href ||
+            (item.href !== "/" && pathname.startsWith(`${item.href}/`));
           const className = [item.cta ? "nav-cta" : "", isActive ? "active" : ""]
             .filter(Boolean)
             .join(" ");
@@ -78,14 +81,6 @@ export default function SiteHeader() {
         })}
       </nav>
 
-      <Link
-        className="brand brand-tech"
-        href="/"
-        aria-label="KENZA Tech - Ballina"
-        onClick={() => setMenuOpen(false)}
-      >
-        <Image src="/kenza-tech-logo.jpg" alt="KENZA Tech" width={1791} height={225} priority />
-      </Link>
     </header>
   );
 }

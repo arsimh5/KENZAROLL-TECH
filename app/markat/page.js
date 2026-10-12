@@ -23,7 +23,6 @@ export default function BrandsPage() {
       <section className="section veka-section">
         <div className="section-heading">
           <p className="eyebrow">Markat qe perdorim</p>
-          <h2>Sisteme per dritare dhe dyer PVC sipas objektit tuaj.</h2>
         </div>
 
         <ProductBrands products={brandProducts} />
